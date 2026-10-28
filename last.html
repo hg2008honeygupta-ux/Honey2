@@ -1,0 +1,1528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Little Glimpse of You, Chinu ❤️</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Quicksand:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: "Quicksand", sans-serif;
+            color: #4b3b42;
+            overflow-x: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 15% 15%,
+                    rgba(255,255,255,.8),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(255,214,229,.7),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #fff0f5,
+                    #f7e9ff,
+                    #fff8ef
+                );
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+
+            background-image:
+                radial-gradient(
+                    circle,
+                    rgba(255,105,180,.22) 1px,
+                    transparent 1px
+                );
+
+            background-size: 42px 42px;
+            opacity: .45;
+
+            z-index: 0;
+        }
+
+        /* FLOATING ELEMENTS */
+
+        .floating {
+            position: fixed;
+            pointer-events: none;
+            z-index: 1;
+            opacity: .75;
+
+            animation: floatUp linear forwards;
+        }
+
+        @keyframes floatUp {
+
+            from {
+                transform:
+                    translateY(110vh)
+                    rotate(0deg);
+
+                opacity: 0;
+            }
+
+            15% {
+                opacity: .75;
+            }
+
+            to {
+                transform:
+                    translateY(-15vh)
+                    rotate(25deg);
+
+                opacity: 0;
+            }
+        }
+
+
+        /* COMMON SECTION */
+
+        .section {
+            min-height: 100vh;
+            width: 100%;
+
+            padding: 80px 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+            z-index: 2;
+        }
+
+        .inner {
+            width: min(1050px, 100%);
+            margin: auto;
+            text-align: center;
+        }
+
+
+        /* TEXT */
+
+        .eyebrow {
+            font-size: .85rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+
+            color: #c76d9b;
+            font-weight: 700;
+
+            margin-bottom: 14px;
+        }
+
+        h1,
+        h2 {
+            font-family: "Dancing Script", cursive;
+            color: #d95b91;
+        }
+
+
+        /* HERO */
+
+        .hero h1 {
+            font-size: clamp(3.2rem, 8vw, 6.5rem);
+            line-height: .95;
+
+            margin-bottom: 22px;
+
+            text-shadow:
+                0 8px 25px rgba(217,91,145,.16);
+        }
+
+        .hero p {
+            max-width: 650px;
+
+            margin: 0 auto 30px;
+
+            font-size: 1.08rem;
+            line-height: 1.8;
+        }
+
+
+        /* SONG */
+
+        .song-box {
+            width: min(520px, 100%);
+
+            margin: 28px auto 0;
+
+            padding: 18px 20px;
+
+            border:
+                1px solid rgba(255,255,255,.85);
+
+            background:
+                rgba(255,255,255,.58);
+
+            backdrop-filter: blur(14px);
+
+            border-radius: 24px;
+
+            box-shadow:
+                0 18px 45px rgba(130,75,105,.12);
+        }
+
+        .song-title {
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .song-subtitle {
+            font-size: .9rem;
+            opacity: .72;
+            margin-bottom: 14px;
+        }
+
+
+        /* BUTTON */
+
+        .primary-btn {
+            border: 0;
+            border-radius: 999px;
+
+            padding: 14px 26px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ef77a8,
+                    #b978d8
+                );
+
+            color: white;
+
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 10px 25px rgba(217,91,145,.25);
+
+            transition:
+                transform .25s ease,
+                box-shadow .25s ease;
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 14px 30px rgba(217,91,145,.32);
+        }
+
+
+        /* SCROLL HINT */
+
+        .scroll-hint {
+            margin-top: 42px;
+
+            font-size: .88rem;
+            opacity: .65;
+
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            50% {
+                transform: translateY(7px);
+            }
+        }
+
+
+        /* SECTION TITLE */
+
+        .section-title {
+            font-size: clamp(2.7rem, 6vw, 4.7rem);
+            margin-bottom: 15px;
+        }
+
+        .section-intro {
+            max-width: 680px;
+
+            margin: 0 auto 38px;
+
+            line-height: 1.8;
+
+            font-size: 1.05rem;
+        }
+
+
+        /* PHOTO GALLERY */
+
+        .gallery {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 22px;
+
+            align-items: start;
+        }
+
+        .photo-card {
+            background:
+                rgba(255,255,255,.68);
+
+            border:
+                1px solid rgba(255,255,255,.9);
+
+            border-radius: 26px;
+
+            padding: 12px;
+
+            box-shadow:
+                0 18px 40px rgba(130,75,105,.13);
+
+            transition:
+                transform .35s ease,
+                box-shadow .35s ease;
+        }
+
+        .photo-card:nth-child(2) {
+            transform: translateY(28px);
+        }
+
+        .photo-card:hover {
+            transform:
+                translateY(-8px)
+                rotate(-1deg);
+
+            box-shadow:
+                0 25px 55px rgba(130,75,105,.18);
+        }
+
+        .photo-card:nth-child(2):hover {
+            transform:
+                translateY(18px)
+                rotate(1deg);
+        }
+
+        .photo-card img {
+            display: block;
+
+            width: 100%;
+            height: 430px;
+
+            object-fit: cover;
+
+            border-radius: 20px;
+        }
+
+        .photo-card:nth-child(2) img {
+            height: 500px;
+        }
+
+        .caption {
+            padding:
+                16px 8px 8px;
+
+            font-family:
+                "Dancing Script",
+                cursive;
+
+            font-size: 1.55rem;
+
+            color: #c85f8e;
+        }
+
+
+        /* AUTO SCROLL SENTINEL */
+
+        .sentinel {
+            height: 1px;
+            width: 100%;
+
+            margin-top: 70px;
+        }
+
+
+        /* STORY + LETTER */
+
+        .story-card,
+        .letter-card {
+            width: min(820px, 100%);
+
+            margin: 0 auto;
+
+            padding:
+                clamp(28px, 5vw, 55px);
+
+            background:
+                rgba(255,255,255,.72);
+
+            border:
+                1px solid rgba(255,255,255,.9);
+
+            border-radius: 32px;
+
+            backdrop-filter: blur(15px);
+
+            box-shadow:
+                0 22px 60px rgba(130,75,105,.14);
+        }
+
+
+        /* STORY */
+
+        .story-lines {
+            display: grid;
+
+            gap: 22px;
+
+            text-align: left;
+
+            margin: 32px 0;
+        }
+
+        .story-line {
+            padding: 18px 20px;
+
+            border-left:
+                3px solid #e987ad;
+
+            background:
+                rgba(255,240,247,.72);
+
+            border-radius:
+                0 18px 18px 0;
+
+            line-height: 1.8;
+        }
+
+        .story-line strong {
+            color: #c85f8e;
+        }
+
+
+        /* LETTER */
+
+        .letter-section {
+            display: none;
+            min-height: 100vh;
+        }
+
+        .letter-section.show {
+            display: flex;
+
+            animation:
+                revealSection 1s ease both;
+        }
+
+        @keyframes revealSection {
+
+            from {
+                opacity: 0;
+                transform: translateY(35px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .letter-card {
+            text-align: left;
+        }
+
+        .letter-heading {
+            text-align: center;
+
+            font-family:
+                "Dancing Script",
+                cursive;
+
+            color: #d95b91;
+
+            font-size:
+                clamp(2.7rem, 6vw, 4.3rem);
+
+            margin-bottom: 28px;
+        }
+
+        .letter-card p {
+            font-size: 1.02rem;
+
+            line-height: 1.95;
+
+            margin-bottom: 19px;
+        }
+
+        .signature {
+            text-align: right;
+
+            font-family:
+                "Dancing Script",
+                cursive;
+
+            color: #c85f8e;
+
+            font-size: 1.7rem;
+
+            margin-top: 28px;
+        }
+
+        .auto-note {
+            text-align: center;
+
+            margin-top: 24px;
+
+            font-size: .85rem;
+
+            opacity: .62;
+        }
+
+
+        /* FINAL PAGE */
+
+        .final-section {
+            min-height: 100vh;
+
+            display: none;
+
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(255,255,255,.82),
+                    rgba(255,229,240,.45)
+                );
+        }
+
+        .final-section.show {
+            display: flex;
+
+            animation:
+                finalReveal 1.5s ease both;
+        }
+
+        @keyframes finalReveal {
+
+            from {
+                opacity: 0;
+                transform: scale(.96);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .final-date {
+            font-size: .9rem;
+
+            letter-spacing: 5px;
+
+            color: #c76d9b;
+
+            margin-bottom: 20px;
+
+            font-weight: 700;
+        }
+
+        .final-title {
+            font-family:
+                "Dancing Script",
+                cursive;
+
+            font-size:
+                clamp(4rem, 10vw, 8rem);
+
+            line-height: .95;
+
+            color: #d94f8d;
+
+            text-shadow:
+                0 12px 35px rgba(217,79,141,.2);
+
+            margin-bottom: 24px;
+        }
+
+        .final-text {
+            max-width: 650px;
+
+            margin: 0 auto;
+
+            font-size: 1.1rem;
+
+            line-height: 1.9;
+        }
+
+        .big-heart {
+            display: block;
+
+            margin-top: 28px;
+
+            font-size: 3.5rem;
+
+            animation:
+                heartbeat 1.8s infinite;
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            15% {
+                transform: scale(1.18);
+            }
+
+            30% {
+                transform: scale(1);
+            }
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            .section {
+                padding: 65px 15px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+
+                max-width: 520px;
+
+                margin: auto;
+            }
+
+            .photo-card:nth-child(2) {
+                transform: none;
+            }
+
+            .photo-card:nth-child(2):hover {
+                transform:
+                    translateY(-8px)
+                    rotate(1deg);
+            }
+
+            .photo-card img,
+            .photo-card:nth-child(2) img {
+                height: auto;
+
+                max-height: 620px;
+
+                object-fit: cover;
+            }
+
+            .story-card,
+            .letter-card {
+                border-radius: 24px;
+
+                padding:
+                    26px 20px;
+            }
+
+            .hero h1 {
+                font-size:
+                    clamp(3rem, 15vw, 5rem);
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- ===================================== -->
+    <!-- INTRO -->
+    <!-- ===================================== -->
+
+    <section
+        class="section hero"
+        id="heroSection"
+    >
+
+        <div class="inner">
+
+            <div class="eyebrow">
+                a little something for you
+            </div>
+
+            <h1>
+                A Little Glimpse of You
+            </h1>
+
+            <p>
+                Just a few little moments of the girl who somehow became
+                one of the most important people in my life. ❤️
+            </p>
+
+
+            <!-- SONG -->
+
+            <div class="song-box">
+
+                <div class="song-title">
+                    Jeene Laga Hoon 🎶
+                </div>
+
+                <div class="song-subtitle">
+                    Press play, then take your time.
+                </div>
+
+                <button
+                    class="primary-btn"
+                    id="songButton"
+                >
+                    ▶ Play Song
+                </button>
+
+                <audio
+                    id="birthdaySong"
+                    loop
+                >
+
+                    <source
+                        src="Jeene Laga Hoon Ramaiya Vastavaiya 320 Kbps.mp3"
+                        type="audio/mpeg"
+                    >
+
+                </audio>
+
+            </div>
+
+
+            <div class="scroll-hint">
+                ↓ scroll a little, Chinu ↓
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ===================================== -->
+    <!-- GLIMPSE -->
+    <!-- ===================================== -->
+
+    <section
+        class="section"
+        id="glimpseSection"
+    >
+
+        <div class="inner">
+
+            <div class="eyebrow">
+                little pieces of you
+            </div>
+
+            <h2 class="section-title">
+                Just You Being You. ❤️
+            </h2>
+
+            <p class="section-intro">
+                No big words here. Bas kuch pictures of you that I wanted
+                to put here because... well, you're pretty damn cute. 🥹
+            </p>
+
+
+            <div class="gallery">
+
+
+                <!-- PHOTO 1 -->
+
+                <article class="photo-card">
+
+                    <img
+                        src="02.jpg"
+                        alt="Chinu smiling"
+                    >
+
+                    <div class="caption">
+                        That smile. Bas. Enough said. ❤️
+                    </div>
+
+                </article>
+
+
+
+                <!-- PHOTO 2 -->
+
+                <article class="photo-card">
+
+                    <img
+                        src="03.jpg"
+                        alt="Chinu with her family"
+                    >
+
+                    <div class="caption">
+                        A little piece of the girl behind my favourite person. 🎀
+                    </div>
+
+                </article>
+
+
+
+                <!-- PHOTO 3 -->
+
+                <article class="photo-card">
+
+                    <img
+                        src="04.jpg"
+                        alt="Chinu"
+                    >
+
+                    <div class="caption">
+                        Still you. Still cute. Still my Chinu. 🤍
+                    </div>
+
+                </article>
+
+
+            </div>
+
+
+            <div
+                class="sentinel"
+                id="glimpseEnd"
+            ></div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ===================================== -->
+    <!-- HOW IT ALL STARTED -->
+    <!-- ===================================== -->
+
+    <section
+        class="section"
+        id="storySection"
+    >
+
+        <div class="inner">
+
+            <div class="eyebrow">
+                before all of this
+            </div>
+
+            <h2 class="section-title">
+                How It All Started
+            </h2>
+
+
+            <div class="story-card">
+
+
+                <div class="story-lines">
+
+
+                    <div class="story-line">
+
+                        It started with a
+                        <strong>random GC</strong>.
+
+                        Ek random sa
+                        <strong>“hi”</strong>.
+
+                        Bas thodi si baat...
+                        nothing that looked important at the time.
+
+                    </div>
+
+
+
+                    <div class="story-line">
+
+                        Then somehow, for almost
+                        <strong>1.5 years</strong>,
+
+                        we mostly just kept liking each
+                        other's stories.
+
+                        No idea that something this special
+                        was slowly building.
+
+                    </div>
+
+
+
+                    <div class="story-line">
+
+                        And then one day, we got into a
+                        relationship and it somehow felt like
+                        we had already known each other for
+
+                        <strong>10–15 years</strong>.
+
+                    </div>
+
+
+
+                    <div class="story-line">
+
+                        Some stories are planned.
+
+                        <strong>Ours just happened.</strong>
+
+                        And honestly,
+                        I wouldn't change a thing.
+
+                    </div>
+
+
+                </div>
+
+
+                <button
+                    class="primary-btn"
+                    id="letterButton"
+                >
+                    Read My Letter 💌
+                </button>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ===================================== -->
+    <!-- LETTER -->
+    <!-- ===================================== -->
+
+    <section
+        class="section letter-section"
+        id="letterSection"
+    >
+
+        <div class="inner">
+
+            <div class="letter-card">
+
+
+                <div class="letter-heading">
+                    Happy Birthday, Chinu ❤️
+                </div>
+
+
+                <p>
+                    I honestly don't know how to write this without getting
+                    a little emotional, because there are so many things I
+                    feel for you that I could probably keep writing forever
+                    and still feel like I haven't said enough.
+                </p>
+
+
+                <p>
+                    Sometimes I think about how random our story was.
+                    Ek random GC, ek random “hi”, barely any talks,
+                    bas stories like karna, and then almost 1.5 years later,
+                    somehow we ended up together.
+                    And the funniest part is that it never felt like we were
+                    starting something new.
+                    It felt like we'd already known each other for years.
+                    Jaise humari story ka beginning tha hi nahi,
+                    bas ek din realise hua ki
+                    <strong>we're already us.</strong>
+                </p>
+
+
+                <p>
+                    I don't have one favourite memory with you because I
+                    genuinely love almost every moment we've shared.
+                    Every conversation, every stupid fight, every random talk,
+                    every laugh, every little thing.
+                    Even when we're doing absolutely nothing,
+                    somehow being with you makes it feel like something
+                    worth remembering.
+                </p>
+
+
+                <p>
+                    And then there's my Chinu, my
+                    <strong>Chini Kam Paani</strong>. 😭❤️
+                    Your cute little <em>nanananan</em>,
+                    your <em>“haan haan”</em> when you're angry or just
+                    messing with me, the way you copy me and somehow make
+                    even that adorable.
+                    These little things might mean nothing to anyone else,
+                    but I notice them.
+                    I remember them.
+                    Because they're yours.
+                </p>
+
+
+                <p>
+                    You've also been there for me in ways I don't think I've
+                    ever properly thanked you for.
+                    Whenever I needed you, you were there.
+                    You supported me, understood me, comforted me and made
+                    things feel a little easier.
+                    Sometimes you probably don't even realise how much your
+                    presence has helped me, but it has.
+                    More than you know.
+                </p>
+
+
+                <p>
+                    And then there are little pieces of us that I'll always
+                    keep close.
+                    <strong>
+                        19th September, 4:45 PM, Jeene Laga Hoon, Taqdeer.
+                    </strong>
+                    To everyone else they're just a date, a time, a song and
+                    a movie.
+                    To me, they're memories.
+                    They're feelings.
+                    They're little pieces of our story.
+                </p>
+
+
+                <p>
+                    I still find it crazy that someone who was once just a
+                    random girl in a GC became the person I want to tell
+                    everything to.
+                    The person I look for.
+                    The person I miss.
+                    The person who can change my mood just by talking to me.
+                </p>
+
+
+                <p>
+                    You became my favourite person without even asking
+                    for the position.
+                </p>
+
+
+                <p>
+                    And I don't love some perfect version of you.
+                    I love your moods, your drama, your stubbornness,
+                    your random nonsense, your cute side, your annoying side,
+                    all of it.
+                    <strong>I love you as you are.</strong>
+                </p>
+
+
+                <p>
+                    I don't know what the future looks like, and I don't want
+                    to make some huge promise about things I can't control.
+                    But I know that I want more time with you.
+                    More random conversations, more stupid fights,
+                    more laughing, more <em>haan haan</em>,
+                    more <em>nanananan</em>,
+                    more memories that we don't even realise are special
+                    until years later.
+                </p>
+
+
+                <p>
+                    If I could go back to that random GC and meet you all
+                    over again, knowing everything I know now,
+                    <strong>I'd still choose you. Every single time.</strong>
+                </p>
+
+
+                <p>
+                    And if someday you ever wonder what you mean to me,
+                    I hope you remember this.
+                </p>
+
+
+                <p>
+                    You aren't just someone I fell in love with.
+                    Somewhere along the way,
+                    <strong>
+                        you became a part of my life that I genuinely
+                        can't imagine not having.
+                    </strong>
+                </p>
+
+
+                <p>
+                    You're in my favourite memories, my songs,
+                    my random thoughts, and all those little moments
+                    where I suddenly wish you were there.
+                </p>
+
+
+                <p>
+                    So on your birthday, I just want you to know that
+                    you're loved, you're important,
+                    and you're incredibly special to me.
+                </p>
+
+
+                <p>
+                    Thank you for being you.
+                    Thank you for finding your way into my life.
+                    And thank you for all the little moments that became
+                    so much bigger because they were with you.
+                </p>
+
+
+                <p>
+                    I don't think I've written this perfectly,
+                    but I hope you can feel what I'm trying to say.
+                </p>
+
+
+                <p>
+                    <strong>
+                        I love you, Chinu.
+                        More than I say, more than I show,
+                        and probably more than you'll ever realise.
+                    </strong>
+                </p>
+
+
+                <p>
+                    And selfishly, I hope this isn't just a beautiful
+                    chapter of my life.
+                </p>
+
+
+                <p>
+                    <strong>
+                        I hope you're someone I get to keep writing
+                        the story with. ❤️
+                    </strong>
+                </p>
+
+
+                <p>
+                    Happy Birthday, my love.
+                </p>
+
+
+                <p>
+                    And yes, you're still my favourite little idiot. :')
+                </p>
+
+
+                <div class="signature">
+                    Yours, always. ❤️
+                </div>
+
+
+                <div class="auto-note">
+                    Just stay here for a little while...
+                    the last page will appear automatically. 🥹
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ===================================== -->
+    <!-- FINAL -->
+    <!-- ===================================== -->
+
+    <section
+        class="section final-section"
+        id="finalSection"
+    >
+
+        <div class="inner">
+
+
+            <div class="final-date">
+                29 • 10 • 2026
+            </div>
+
+
+            <div class="final-title">
+
+                Happy Birthday,
+                <br>
+                Chinu ❤️
+
+            </div>
+
+
+            <p class="final-text">
+
+                If this little website made you smile even once,
+                then every second spent making it was worth it.
+
+                <br>
+                <br>
+
+                Keep smiling,
+                keep being you,
+
+                and please never stop being
+                my Chini Kam Paani. 😭❤️
+
+            </p>
+
+
+            <span class="big-heart">
+                ❤️
+            </span>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ===================================== -->
+    <!-- JAVASCRIPT -->
+    <!-- ===================================== -->
+
+    <script>
+
+        const song =
+            document.getElementById("birthdaySong");
+
+        const songButton =
+            document.getElementById("songButton");
+
+        const glimpseSection =
+            document.getElementById("glimpseSection");
+
+        const glimpseEnd =
+            document.getElementById("glimpseEnd");
+
+        const storySection =
+            document.getElementById("storySection");
+
+        const letterButton =
+            document.getElementById("letterButton");
+
+        const letterSection =
+            document.getElementById("letterSection");
+
+        const finalSection =
+            document.getElementById("finalSection");
+
+
+        let storyAutoScrollDone = false;
+
+        let finalTimerStarted = false;
+
+
+
+        /* SONG */
+
+        songButton.addEventListener(
+            "click",
+            async () => {
+
+                if (song.paused) {
+
+                    try {
+
+                        await song.play();
+
+                        songButton.textContent =
+                            "⏸ Pause Song";
+
+                    }
+
+                    catch (error) {
+
+                        songButton.textContent =
+                            "▶ Play Song";
+
+                    }
+
+
+                    setTimeout(
+                        () => {
+
+                            glimpseSection.scrollIntoView({
+                                behavior: "smooth",
+                                block: "start"
+                            });
+
+                        },
+                        450
+                    );
+
+                }
+
+                else {
+
+                    song.pause();
+
+                    songButton.textContent =
+                        "▶ Play Song";
+
+                }
+
+            }
+        );
+
+
+        song.addEventListener(
+            "play",
+            () => {
+
+                songButton.textContent =
+                    "⏸ Pause Song";
+
+            }
+        );
+
+
+        song.addEventListener(
+            "pause",
+            () => {
+
+                songButton.textContent =
+                    "▶ Play Song";
+
+            }
+        );
+
+
+
+        /* AUTO SCROLL TO STORY */
+
+        const storyObserver =
+            new IntersectionObserver(
+
+                (entries) => {
+
+                    entries.forEach(
+                        entry => {
+
+                            if (
+                                entry.isIntersecting &&
+                                !storyAutoScrollDone
+                            ) {
+
+                                storyAutoScrollDone =
+                                    true;
+
+
+                                setTimeout(
+                                    () => {
+
+                                        storySection.scrollIntoView({
+                                            behavior: "smooth",
+                                            block: "start"
+                                        });
+
+                                    },
+                                    2200
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+
+                {
+                    threshold: 0.7
+                }
+
+            );
+
+
+        storyObserver.observe(
+            glimpseEnd
+        );
+
+
+
+        /* OPEN LETTER */
+
+        letterButton.addEventListener(
+            "click",
+            () => {
+
+                letterSection.classList.add(
+                    "show"
+                );
+
+
+                setTimeout(
+                    () => {
+
+                        letterSection.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start"
+                        });
+
+                    },
+                    150
+                );
+
+
+                /*
+                    Final screen appears automatically
+                    after 55 seconds.
+                */
+
+                if (!finalTimerStarted) {
+
+                    finalTimerStarted = true;
+
+
+                    setTimeout(
+                        () => {
+
+                            finalSection.classList.add(
+                                "show"
+                            );
+
+
+                            setTimeout(
+                                () => {
+
+                                    finalSection.scrollIntoView({
+                                        behavior: "smooth",
+                                        block: "start"
+                                    });
+
+                                },
+                                250
+                            );
+
+                        },
+                        55000
+                    );
+
+                }
+
+            }
+        );
+
+
+
+        /* FLOATING HEARTS */
+
+        const floatingSymbols = [
+
+            "💗",
+            "💖",
+            "💕",
+            "✨",
+            "🌸",
+            "🎀",
+            "🦋"
+
+        ];
+
+
+        function createFloating() {
+
+            const el =
+                document.createElement("div");
+
+
+            el.className =
+                "floating";
+
+
+            el.textContent =
+                floatingSymbols[
+                    Math.floor(
+                        Math.random() *
+                        floatingSymbols.length
+                    )
+                ];
+
+
+            el.style.left =
+                Math.random() * 100 + "vw";
+
+
+            el.style.fontSize =
+                (12 + Math.random() * 18) + "px";
+
+
+            el.style.animationDuration =
+                (8 + Math.random() * 7) + "s";
+
+
+            document.body.appendChild(
+                el
+            );
+
+
+            setTimeout(
+                () => el.remove(),
+                16000
+            );
+
+        }
+
+
+        setInterval(
+            createFloating,
+            1400
+        );
+
+
+        for (
+            let i = 0;
+            i < 8;
+            i++
+        ) {
+
+            setTimeout(
+                createFloating,
+                i * 450
+            );
+
+        }
+
+    </script>
+
+</body>
+</html>
